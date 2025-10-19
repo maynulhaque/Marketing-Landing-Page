@@ -1,0 +1,252 @@
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+:root {
+  --primary-color:#007bff;
+  --secondary-color:#333;
+  --accent-color:#fff;
+  --bg-color:#f8f9fa;
+  --shadow-color:rgba(0,0,0,0.1);
+  --success-color:#28a745;
+  --error-color:#dc3545;
+}
+
+body {
+  font-family: 'Poppins', system-ui;
+  color: var(--secondary-color);
+  background-color: var(--bg-color);
+}
+
+/* Header Section */
+.header {
+  background-color: var(--accent-color);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999991;
+}
+
+.logo {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 40px 20px;
+  background-color: var(--primary-color);
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  color: var(--accent-color);
+  font-size: 2.5em;
+}
+
+.hero-content p {
+  color: var(--accent-color);
+  font-size: 1.2em;
+  margin: 20px 0px;
+}
+
+.hero-visual {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-visual img {
+  width: 100%;
+  max-width: 350px;
+}
+
+.btn {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Features Section */
+.feature {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px 40px;
+  text-align: center;
+}
+
+.feature-box {
+  background-color: var(--accent-color);
+  padding: 20px;
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.feature-box h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* Pricing Section */
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px 40px;
+  text-align: center;
+}
+
+.plan {
+  background-color: var(--accent-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.plan:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.plan h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.plan p.price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.feature-list {
+  text-align: left;
+}
+
+.feature-list a {
+  font-size: 1rem;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.text-green {
+  color: var(--success-color);
+  margin-left: 10px;
+}
+
+/* Footer Section */
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  text-align: center;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Mobiles (max-width: 768px) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-links { 
+    display: none; 
+  }
+  .feature, .pricing {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 0.9em;
+  }
+}
+
+/* Small Mobiles (max-width: 480px) */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+  .nav-links { 
+    display: none; 
+  }
+  .hero-content h1 {
+    font-size: 1.5em;
+  }
+
+  .feature-box, .plan {
+    padding: 15px;
+    height: auto;
+  }
+
+  .pricing, .feature {
+    gap: 15px;
+  }
+
+  .footer {
+    font-size: 0.9em;
+    padding: 15px;
+  }
+}
